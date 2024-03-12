@@ -13,8 +13,6 @@ class PersonBloc extends Bloc<PersonEvent, PersonState> {
   Future<void> changeAge(
       ChangeAgePressed event, Emitter<PersonState> emit) async {
     emit(ConcretePersonState(state.person?.copyWith(age: event.agePlus)));
-
   }
   //new change from ducthinh01
-
 }

@@ -1,3 +1,6 @@
+import 'dart:math';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:to_dp_app/sqlite/create_note.dart';
 import 'package:to_dp_app/sqlite/note_model.dart';
@@ -47,12 +50,12 @@ class _LayoutNotePageState extends State<LayoutNotePage> {
         onPressed: () {
           Navigator.push(
                   context,
-                  MaterialPageRoute(
+                  CupertinoPageRoute(
                       builder: (context) => const CreateNoteLayout()))
               .then((value) {
             if (value) {
               _repfresh();
-            }
+            } else {}
           });
         },
         child: const Icon(Icons.add),
@@ -109,7 +112,7 @@ class _LayoutNotePageState extends State<LayoutNotePage> {
                                       ],
                                     )
                                   ],
-                                  title: Text("Detail note"),
+                                  title: const Text("Detail note"),
                                   content: Column(
                                     mainAxisSize: MainAxisSize.min,
                                     children: [

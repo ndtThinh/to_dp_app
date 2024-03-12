@@ -22,6 +22,12 @@ class _CreateNoteLayoutState extends State<CreateNoteLayout> {
         actions: [
           IconButton(
               onPressed: () {
+                //back
+                Navigator.of(context).pop(false);
+              },
+              icon: const Icon(Icons.arrow_back_ios)),
+          IconButton(
+              onPressed: () {
                 //create note
                 db
                     .createNote(NoteModel(

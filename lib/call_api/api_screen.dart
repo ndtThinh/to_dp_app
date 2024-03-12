@@ -94,14 +94,16 @@ class DioDart extends StatelessWidget {
           future: fetchApi(),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
-              return ListView.builder(itemBuilder: (context, index) {
-                return Card(
-                  child: ListTile(
-                    title: Text('${snapshot.data![index].title}'),
-                    subtitle: Text('${snapshot.data![index].body}'),
-                  ),
-                );
-              });
+              return ListView.builder(
+                  itemCount: snapshot.data!.length,
+                  itemBuilder: (context, index) {
+                    return Card(
+                      child: ListTile(
+                        title: Text('${snapshot.data![index].title}'),
+                        subtitle: Text('${snapshot.data![index].body}'),
+                      ),
+                    );
+                  });
             } else if (snapshot.hasError) {
               return const Text('Call Api Error');
             } else {
