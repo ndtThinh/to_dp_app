@@ -171,4 +171,11 @@ class _LayoutNotePageState extends State<LayoutNotePage> {
           }),
     ));
   }
+
+  Widget snackBarView() {
+    return SnackBar(
+      content: Text("Xin vchao"),
+      action: SnackBarAction(label: 'oke', onPressed: () {}),
+    );
+  }
 }

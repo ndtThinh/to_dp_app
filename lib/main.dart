@@ -36,7 +36,7 @@ class MainApp extends StatelessWidget {
         const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(body: LayoutNotePage()),
+      home: Scaffold(body: bodyBlocApi()),
     );
   }
 
