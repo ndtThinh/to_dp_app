@@ -3,14 +3,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:to_dp_app/call_api/bloc/post_event.dart';
 import 'package:to_dp_app/call_api/bloc/post_state.dart';
 import 'package:to_dp_app/call_api/post_model.dart';
+import 'package:to_dp_app/clean_archi/di.dart';
 import 'package:to_dp_app/clean_archi/domain/usercase/post_usecae.dart';
 import 'package:to_dp_app/clean_archi/presentation/bloc/post_event_clean.dart';
 import 'package:to_dp_app/clean_archi/presentation/bloc/post_state_clean.dart';
 
 class PostBlocClean extends Bloc<PostEventClean, PostStateClean> {
-  final PostUseCase postUseCase;
+  final PostUseCase postUseCase = getIt<PostUseCase>();
 
-  PostBlocClean({required this.postUseCase}) : super(PostStateClean()) {
+  PostBlocClean() : super(PostStateClean()) {
     on<PostFetchedClean>(_onPostFetched);
   }
 
