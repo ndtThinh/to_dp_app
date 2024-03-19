@@ -1,12 +1,12 @@
 import 'package:dio/dio.dart';
 import 'package:to_dp_app/clean_archi/data/remote/api/post_api.dart';
+import 'package:to_dp_app/clean_archi/data/remote/api/post_api_provider.dart';
 import 'package:to_dp_app/clean_archi/data/remote/dto/post_dto.dart';
 import 'package:to_dp_app/clean_archi/domain/entity/post_entityl.dart';
 
 class PostApiEmpl implements PostApi {
-  final Dio dio;
+  final Dio dio = ApiClientProvider.dio;
   final _postLimit = 10;
-  PostApiEmpl({required this.dio});
 
   @override
   Future<List<PostModel>> getPosts([int startIndex = 0]) async {
