@@ -1,0 +1,3 @@
+class ApiRespone<T>{
+  
+}
